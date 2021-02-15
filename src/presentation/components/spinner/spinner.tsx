@@ -1,8 +1,13 @@
 import React from 'react'
 import Styles from './spinner.styles.scss'
 
-const Spinner = () => (
-  <div className={Styles.spinner}>
+
+type SpinnerProps = React.HTMLAttributes<HTMLElement> & {
+  isNegative?: boolean
+}
+
+const Spinner = ({ className }: SpinnerProps) => (
+  <div className={[Styles.spinner, className].join(' ')}>
     <div />
     <div />
   </div>
